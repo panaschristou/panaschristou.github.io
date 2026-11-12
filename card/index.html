@@ -39,7 +39,7 @@
       </div>
       <p class="layout-note" id="layout-note">Larger QR artwork for iOS 27, with the website in a separate footer.</p>
       <p class="selected" aria-live="polite">Selected: <strong id="selection">Blue &amp; white · Larger QR</strong></p>
-      <a class="wallet-link" id="wallet-link" href="Panayiotis-Christou-Large.pkpass?v=4">
+      <a class="wallet-link" id="wallet-link" href="Panayiotis-Christou-Large.pkpass?v=5">
         <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M5 9V6a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2v3" stroke="#9cbedf" stroke-width="2"/><rect x="3" y="9" width="26" height="19" rx="4" stroke="currentColor" stroke-width="2"/><path d="M23 15h6v8h-6a4 4 0 0 1 0-8Z" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="19" r="1" fill="currentColor"/></svg>
         <span>Add to Apple Wallet</span>
       </a>
@@ -47,7 +47,7 @@
       <p class="small">No extra app, account, or payment.</p>
     </section>
     <figure class="preview">
-      <img id="card-preview" src="fold-large-preview.png?v=2" width="1035" height="1515" alt="Blue and white research card for Panayiotis Christou, Systems Researcher, PhD Researcher, New York, with a QR code to his website.">
+      <img id="card-preview" src="fold-large-preview.png?v=3" width="1035" height="1515" alt="Blue and white research card for Panayiotis Christou, Systems Researcher, PhD Researcher, New York, with a QR code to his website.">
       <figcaption>Layout preview. Wallet applies its own footer styling.</figcaption>
     </figure>
   </main>
@@ -57,10 +57,10 @@
     function renderSelection(updateHash){
       const design=designs[selectedDesign];
       const large=selectedLayout==='large';
-      document.getElementById('card-preview').src=design.asset+'-'+selectedLayout+'-preview.png?v=2';
+      document.getElementById('card-preview').src=design.asset+'-'+selectedLayout+'-preview.png?v='+((selectedDesign==='fold'&&large)?'3':'2');
       document.getElementById('card-preview').alt=design.name+' research card for Panayiotis Christou, with '+(large?'a larger QR code':'a standard Wallet QR code')+' and a separate website footer.';
       document.getElementById('selection').textContent=design.name+' · '+(large?'Larger QR':'Standard QR');
-      document.getElementById('wallet-link').href=design.file+(large?'-Large':'')+'.pkpass?v=4';
+      document.getElementById('wallet-link').href=design.file+(large?'-Large':'')+'.pkpass?v='+((selectedDesign==='fold'&&large)?'5':'4');
       document.getElementById('layout-note').textContent=large?'Larger QR artwork for iOS 27, with the website in a separate footer.':'Wallet controls this QR size. The website is in a separate footer.';
       document.querySelectorAll('[data-design]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.design===selectedDesign)));
       document.querySelectorAll('[data-layout]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.layout===selectedLayout)));
