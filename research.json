@@ -1,0 +1,205 @@
+[
+  {
+    "id": "memgov",
+    "area": "ai",
+    "name": "Beyond Retrieval",
+    "subtitle": "Deterministic Memory Governance with Pairwise Constraints and Certified Repair for Long-Term Language Agents",
+    "status": "AACL 2026 · Main track · Accepted",
+    "summary": "Helping language agents use memory without combining incompatible information.",
+    "detail": "Retrieval can return individually relevant memories that conflict when combined. This work asks how an agent can use long-term memory while respecting explicit compatibility constraints, instead of relying on the language model to resolve every conflict. MemGov inserts a governance layer between retrieval and context construction. It identifies pairwise conflicts, repairs candidate memory sets deterministically, and produces certificates that let the resulting selection be checked. Across 3,200 benchmark cases, detected unsafe merges fell from 47–51% to 0%, with answer hit rates within approximately 2–4 percentage points of retrieval baselines and 62–69 ms of governance overhead per case. The results illustrate a way to make memory consistency an explicit systems responsibility. The guarantee concerns detected pairwise constraint violations in evaluated memory sets; it does not establish factual correctness or eliminate hallucinations.",
+    "links": [
+      [
+        "Paper",
+        "https://aclanthology.org/2026.aacl-long.246/"
+      ]
+    ],
+    "motivation": "Retrieval can return individually relevant memories that conflict when combined. This work asks how an agent can use long-term memory while respecting explicit compatibility constraints, instead of relying on the language model to resolve every conflict.",
+    "contribution": "MemGov inserts a governance layer between retrieval and context construction. It identifies pairwise conflicts, repairs candidate memory sets deterministically, and produces certificates that let the resulting selection be checked.",
+    "findings": "Across 3,200 benchmark cases, detected unsafe merges fell from 47–51% to 0%, with answer hit rates within approximately 2–4 percentage points of retrieval baselines and 62–69 ms of governance overhead per case.",
+    "insight": "The results illustrate a way to make memory consistency an explicit systems responsibility. The guarantee concerns detected pairwise constraint violations in evaluated memory sets; it does not establish factual correctness or eliminate hallucinations."
+  },
+  {
+    "id": "verge",
+    "area": "ai",
+    "name": "VERGE",
+    "subtitle": "Verified Evidence-Aware Release Governance and Execution for Shared Multi-Agent Memory",
+    "status": "AAAI 2027 · Submitted",
+    "summary": "Checking what agents can share before information is released.",
+    "detail": "When multiple agents share memory, deciding what to release is a separate problem from finding relevant information. A useful release must also respect policy constraints, and those decisions should remain consistent across storage systems. VERGE combines typed release constraints, MILP-based planning, an independent verifier, and fail-closed commits. This separates utility optimization from enforcement: a proposed release must pass verification before it is committed. In the 17,220-decision benchmark, evaluated planners matched the oracle objective with zero observed policy violations. Five storage adapters preserved equivalent release decisions. A separate, larger stress sweep exposed utility and timeout tradeoffs. The systems question is where to place trust: the planner proposes, while a separate verification boundary decides whether the release can proceed. Benchmark compliance is evidence for the evaluated policies, not a universal safety guarantee.",
+    "links": [],
+    "motivation": "When multiple agents share memory, deciding what to release is a separate problem from finding relevant information. A useful release must also respect policy constraints, and those decisions should remain consistent across storage systems.",
+    "contribution": "VERGE combines typed release constraints, MILP-based planning, an independent verifier, and fail-closed commits. This separates utility optimization from enforcement: a proposed release must pass verification before it is committed.",
+    "findings": "In the 17,220-decision benchmark, evaluated planners matched the oracle objective with zero observed policy violations. Five storage adapters preserved equivalent release decisions. A separate, larger stress sweep exposed utility and timeout tradeoffs.",
+    "insight": "The systems question is where to place trust: the planner proposes, while a separate verification boundary decides whether the release can proceed. Benchmark compliance is evidence for the evaluated policies, not a universal safety guarantee."
+  },
+  {
+    "id": "llm4dist",
+    "area": "ai",
+    "name": "LLM4DistReconfig",
+    "subtitle": "A Fine-tuned Large Language Model for Power Distribution Network Reconfiguration",
+    "status": "NAACL 2025 · Main track · Presented",
+    "summary": "Adapting language models to produce valid configurations for power networks.",
+    "detail": "Power distribution reconfiguration requires outputs that satisfy network constraints. A language model can produce plausible configurations that are still invalid, motivating adaptation that accounts for the structure of the task. The study combines domain-specific prompts, LoRA fine-tuning, and constraint-aware loss terms, and evaluates language-model-generated configurations across multiple network sizes. In the reported Llama 2 experiment, improper outputs decreased from 481 to 24 out of 500 cases after the combined prompting, loss, and fine-tuning interventions. The comparison shows why domain constraints belong in model adaptation and evaluation, beyond fluent output generation. The reduction comes from several interventions together and should not be attributed to any one component or generalized to every model.",
+    "links": [
+      [
+        "arXiv",
+        "https://arxiv.org/abs/2501.14960"
+      ]
+    ],
+    "motivation": "Power distribution reconfiguration requires outputs that satisfy network constraints. A language model can produce plausible configurations that are still invalid, motivating adaptation that accounts for the structure of the task.",
+    "contribution": "The study combines domain-specific prompts, LoRA fine-tuning, and constraint-aware loss terms, and evaluates language-model-generated configurations across multiple network sizes.",
+    "findings": "In the reported Llama 2 experiment, improper outputs decreased from 481 to 24 out of 500 cases after the combined prompting, loss, and fine-tuning interventions.",
+    "insight": "The comparison shows why domain constraints belong in model adaptation and evaluation, beyond fluent output generation. The reduction comes from several interventions together and should not be attributed to any one component or generalized to every model."
+  },
+  {
+    "id": "ttt",
+    "area": "ai",
+    "name": "Test Time Learning for Time Series Forecasting",
+    "subtitle": "",
+    "status": "NeurIPS TSALM workshop · Accepted",
+    "summary": "Exploring adaptive forecasting layers and longer time-series contexts.",
+    "detail": "Long time-series contexts contain useful history, but a fixed representation may not adapt well to the sequence being forecast. This study investigates test-time learning as an alternative mechanism for processing that history. Test-time training layers replace the Mamba blocks in the TimeMachine forecasting architecture. Experiments span seven datasets and examine forecasting behavior as the available input context grows. At a 5,760-step input context, aggregate MSE was 0.509 versus 0.546 for TimeMachine, a 6.8% reduction in that comparison. Results vary across datasets and prediction horizons. The work connects adaptation during sequence processing with forecasting quality. Longer context is an experimental variable rather than an automatic improvement; the reported aggregate does not imply a win on every dataset. The work was also presented to Northwell Health and Cadenza VC.",
+    "links": [
+      [
+        "arXiv",
+        "https://arxiv.org/abs/2409.14012"
+      ]
+    ],
+    "motivation": "Long time-series contexts contain useful history, but a fixed representation may not adapt well to the sequence being forecast. This study investigates test-time learning as an alternative mechanism for processing that history.",
+    "contribution": "Test-time training layers replace the Mamba blocks in the TimeMachine forecasting architecture. Experiments span seven datasets and examine forecasting behavior as the available input context grows.",
+    "findings": "At a 5,760-step input context, aggregate MSE was 0.509 versus 0.546 for TimeMachine, a 6.8% reduction in that comparison. Results vary across datasets and prediction horizons.",
+    "insight": "The work connects adaptation during sequence processing with forecasting quality. Longer context is an experimental variable rather than an automatic improvement; the reported aggregate does not imply a win on every dataset. The work was also presented to Northwell Health and Cadenza VC."
+  },
+  {
+    "id": "world-models",
+    "area": "ai",
+    "name": "Where Structure Enters a World Model",
+    "subtitle": "From Predictive Fit to Physical Rollout",
+    "status": "NeurIPS WM-PAI workshop · Accepted",
+    "summary": "Studying how temporal objectives and physical structure improve autonomous rollouts.",
+    "detail": "Predicting the next observation accurately does not necessarily produce stable physical behavior when a model runs autonomously. This work studies where temporal and geometric structure should enter a model to improve its rollouts. The study combines same-body temporal prediction objectives with equivariant pairwise adapters and evaluates autonomous planetary trajectories, comparing these choices against an absolute next-token baseline. On simulated single-planet trajectories, mean full-rollout MSE fell from 1.805 to 0.498 across three seeds, a 72.4% reduction. Evaluation used 16 autonomous rollouts per checkpoint. The results distinguish local predictive fit from behavior over an extended rollout. They support studying objectives and structural adapters together, within the tested single-planet setting; they do not establish performance on interacting multi-body systems or real-world deployments.",
+    "links": [],
+    "motivation": "Predicting the next observation accurately does not necessarily produce stable physical behavior when a model runs autonomously. This work studies where temporal and geometric structure should enter a model to improve its rollouts.",
+    "contribution": "The study combines same-body temporal prediction objectives with equivariant pairwise adapters and evaluates autonomous planetary trajectories, comparing these choices against an absolute next-token baseline.",
+    "findings": "On simulated single-planet trajectories, mean full-rollout MSE fell from 1.805 to 0.498 across three seeds, a 72.4% reduction. Evaluation used 16 autonomous rollouts per checkpoint.",
+    "insight": "The results distinguish local predictive fit from behavior over an extended rollout. They support studying objectives and structural adapters together, within the tested single-planet setting; they do not establish performance on interacting multi-body systems or real-world deployments."
+  },
+  {
+    "id": "sacc",
+    "area": "hpc",
+    "name": "SACC",
+    "subtitle": "A Structure-Aware GPU Engine for Out-of-Core Constrained Clustering",
+    "status": "SIGMETRICS 2027 · Submitted",
+    "summary": "Processing constrained-clustering datasets larger than GPU memory.",
+    "detail": "Constrained clustering couples assignment decisions through a graph, while large feature datasets can exceed GPU memory. SACC addresses how to exploit problem structure without requiring the entire dataset to reside on the device. The engine decomposes assignment graphs and dispatches components to specialized GPU solvers. Bounded streaming and reuse support out-of-core execution while preserving the clustering result in the matched evaluation. A single 40 GB A100 processed 10 million rows containing 80 GB of features in the Tahoe experiment. Mean end-to-end speedup was 1.46× over a matched streaming reference, with identical assignments and centroids. This comparison connects algorithmic structure with data movement: specialized solvers and a bounded working set can be evaluated together without changing the output. The speedup is specific to the matched Tahoe experiment, rather than a universal GPU performance claim.",
+    "links": [],
+    "motivation": "Constrained clustering couples assignment decisions through a graph, while large feature datasets can exceed GPU memory. SACC addresses how to exploit problem structure without requiring the entire dataset to reside on the device.",
+    "contribution": "The engine decomposes assignment graphs and dispatches components to specialized GPU solvers. Bounded streaming and reuse support out-of-core execution while preserving the clustering result in the matched evaluation.",
+    "findings": "A single 40 GB A100 processed 10 million rows containing 80 GB of features in the Tahoe experiment. Mean end-to-end speedup was 1.46× over a matched streaming reference, with identical assignments and centroids.",
+    "insight": "This comparison connects algorithmic structure with data movement: specialized solvers and a bounded working set can be evaluated together without changing the output. The speedup is specific to the matched Tahoe experiment, rather than a universal GPU performance claim."
+  },
+  {
+    "id": "optipess",
+    "area": "hpc",
+    "name": "OptiPESS",
+    "subtitle": "A GPU-Accelerated Quantum-Classical Framework for Optimized PES Scans",
+    "status": "SC 2026 · Main track · Accepted",
+    "summary": "Avoiding repeated work in expensive scientific optimization workflows.",
+    "detail": "Potential-energy scans solve many related optimization problems. Treating every point as an independent cold start repeats setup and optimization work, motivating a workflow that reuses information across the scan. OptiPESS uses similarity-guided skip, quick, and full execution choices alongside persistent CUDA-Q contexts, cached optimizer state, CUDA graphs, and batched gradients. Evaluation across 18 molecules on eight A100 GPUs reported up to 74.8% less wall time than plain VQE. The reported comparison reduced runtime from 11,908.82 seconds to 3,002.23 seconds. The contribution is a systems approach to avoiding repeated work across related scientific tasks, alongside efficient GPU execution. These are noiseless statevector simulation results, not measured speedups on quantum hardware. A first-author SC 2026 presentation is scheduled.",
+    "links": [
+      [
+        "arXiv",
+        "https://arxiv.org/abs/2611.01389"
+      ]
+    ],
+    "motivation": "Potential-energy scans solve many related optimization problems. Treating every point as an independent cold start repeats setup and optimization work, motivating a workflow that reuses information across the scan.",
+    "contribution": "OptiPESS uses similarity-guided skip, quick, and full execution choices alongside persistent CUDA-Q contexts, cached optimizer state, CUDA graphs, and batched gradients.",
+    "findings": "Evaluation across 18 molecules on eight A100 GPUs reported up to 74.8% less wall time than plain VQE. The reported comparison reduced runtime from 11,908.82 seconds to 3,002.23 seconds.",
+    "insight": "The contribution is a systems approach to avoiding repeated work across related scientific tasks, alongside efficient GPU execution. These are noiseless statevector simulation results, not measured speedups on quantum hardware. A first-author SC 2026 presentation is scheduled."
+  },
+  {
+    "id": "flows",
+    "area": "hpc",
+    "name": "FLOWS",
+    "subtitle": "A Fully Parallel Quantum-Classical Framework for Optimized Workload Structured Hamiltonians",
+    "status": "Ongoing research",
+    "summary": "Reusing solutions and evaluation evidence across related optimization tasks.",
+    "detail": "Related optimization workloads may share useful solutions and evaluation evidence, but reuse must be coordinated with changing resource needs. FLOWS investigates how to combine continuation across tasks with resource-aware execution. Current mechanisms include continuation and evidence contracts, exclusive device teams, setup-affinity scheduling, and bounded asynchronous observation windows. Chemistry and weighted MaxCut provide workload families with distinct qualification limits. This is ongoing research. Device teams resize after outstanding work drains; running kernels do not migrate. Performance qualification is revision-specific, and no new speedup is claimed here. The central design question is how to preserve valid reuse while controlling ownership, concurrency, and scheduling overhead. The project makes those boundaries explicit before drawing conclusions about native multi-GPU performance.",
+    "links": [],
+    "motivation": "Related optimization workloads may share useful solutions and evaluation evidence, but reuse must be coordinated with changing resource needs. FLOWS investigates how to combine continuation across tasks with resource-aware execution.",
+    "contribution": "Current mechanisms include continuation and evidence contracts, exclusive device teams, setup-affinity scheduling, and bounded asynchronous observation windows. Chemistry and weighted MaxCut provide workload families with distinct qualification limits.",
+    "findings": "This is ongoing research. Device teams resize after outstanding work drains; running kernels do not migrate. Performance qualification is revision-specific, and no new speedup is claimed here.",
+    "insight": "The central design question is how to preserve valid reuse while controlling ownership, concurrency, and scheduling overhead. The project makes those boundaries explicit before drawing conclusions about native multi-GPU performance."
+  },
+  {
+    "id": "hybridqc",
+    "area": "systems",
+    "name": "HybridQC",
+    "subtitle": "Hardware-Grounded Simulation of Tightly Integrated Hybrid Quantum-Classical Systems",
+    "status": "ATC 2026 · Main track · Accepted",
+    "summary": "Understanding how compute, memory, and communication shape hybrid-system performance.",
+    "detail": "Hybrid systems combine processors, controllers, memory, and communication links with different capacities. Modeling only computation can miss bottlenecks created by shared resources and orchestration. HybridQC maps workload dependency graphs onto finite-capacity resources in a discrete-event simulator. Hardware profiles cover five backends, enabling studies of scheduling, communication, and resource contention. Mixed-workload simulations showed up to 1.80× makespan variation across scheduling policies, demonstrating that orchestration choices can materially change modeled completion time. The result makes scheduling and resource contention part of the architectural analysis, rather than treating them as fixed overheads. Calibration and validation differ by backend; the reported variation is a simulated policy effect, not a universal hardware speedup.",
+    "links": [
+      [
+        "arXiv",
+        "https://arxiv.org/abs/2607.13352"
+      ]
+    ],
+    "motivation": "Hybrid systems combine processors, controllers, memory, and communication links with different capacities. Modeling only computation can miss bottlenecks created by shared resources and orchestration.",
+    "contribution": "HybridQC maps workload dependency graphs onto finite-capacity resources in a discrete-event simulator. Hardware profiles cover five backends, enabling studies of scheduling, communication, and resource contention.",
+    "findings": "Mixed-workload simulations showed up to 1.80× makespan variation across scheduling policies, demonstrating that orchestration choices can materially change modeled completion time.",
+    "insight": "The result makes scheduling and resource contention part of the architectural analysis, rather than treating them as fixed overheads. Calibration and validation differ by backend; the reported variation is a simulated policy effect, not a universal hardware speedup."
+  },
+  {
+    "id": "tandemqec",
+    "area": "systems",
+    "name": "TandemQEC",
+    "subtitle": "Joint Provisioning of Streaming Quantum Error Correction in Tightly-Integrated Quantum-Classical Systems",
+    "status": "EuroSys 2027 · Submitted",
+    "summary": "Provisioning decoder capacity, bandwidth, and buffers together.",
+    "detail": "Streaming error correction depends on an entire path from measurement through transfer and decoding to feedback. Provisioning decoder compute alone can overlook bandwidth, buffering, and contention elsewhere in that path. TandemQEC jointly models the streaming lifecycle and the resources that govern its latency. It provides a basis for studying decoder capacity, transfer bandwidth, and buffers together rather than sizing each in isolation. Validation against 960 repeated GPU–CPU runs produced median absolute relative errors of 1.06% for median latency and 1.74% for p95 latency. The work connects provisioning decisions to end-to-end timing, including tail latency. The error figures apply to the GPU–CPU validation campaign, not every backend. This project was previously titled StreamingQEC.",
+    "links": [
+      [
+        "arXiv",
+        "https://arxiv.org/abs/2607.13351"
+      ]
+    ],
+    "motivation": "Streaming error correction depends on an entire path from measurement through transfer and decoding to feedback. Provisioning decoder compute alone can overlook bandwidth, buffering, and contention elsewhere in that path.",
+    "contribution": "TandemQEC jointly models the streaming lifecycle and the resources that govern its latency. It provides a basis for studying decoder capacity, transfer bandwidth, and buffers together rather than sizing each in isolation.",
+    "findings": "Validation against 960 repeated GPU–CPU runs produced median absolute relative errors of 1.06% for median latency and 1.74% for p95 latency.",
+    "insight": "The work connects provisioning decisions to end-to-end timing, including tail latency. The error figures apply to the GPU–CPU validation campaign, not every backend. This project was previously titled StreamingQEC."
+  },
+  {
+    "id": "defacto",
+    "area": "systems",
+    "name": "DEFACTO",
+    "subtitle": "Composing Logical Execution, Real-Time Decoding, and Magic-State Supply in Tightly Integrated Quantum-Classical Systems",
+    "status": "ASPLOS 2027 · Submitted",
+    "summary": "Finding bottlenecks that emerge when execution and supporting resources interact.",
+    "detail": "Logical execution, real-time decoding, and magic-state supply interact through dependencies and finite resources. Improving one subsystem may leave total execution time unchanged if another resource remains the bottleneck. DEFACTO couples these components in an event-driven simulator with explicit resource ownership and feedback constraints, allowing joint provisioning decisions to be studied at the system level. In a feedback-constrained case study, jointly increasing workers and feedback-buffer entries reduced modeled runtime from 105.9 to 21.5 ms, a 4.93× simulated speedup. Increasing workers alone gave no benefit in that configuration. The case study illustrates why bottlenecks must be evaluated in combination: extra compute only helped when feedback capacity increased too. The result concerns the modeled workload, not acceleration of the simulator itself or measured hardware execution.",
+    "links": [],
+    "motivation": "Logical execution, real-time decoding, and magic-state supply interact through dependencies and finite resources. Improving one subsystem may leave total execution time unchanged if another resource remains the bottleneck.",
+    "contribution": "DEFACTO couples these components in an event-driven simulator with explicit resource ownership and feedback constraints, allowing joint provisioning decisions to be studied at the system level.",
+    "findings": "In a feedback-constrained case study, jointly increasing workers and feedback-buffer entries reduced modeled runtime from 105.9 to 21.5 ms, a 4.93× simulated speedup. Increasing workers alone gave no benefit in that configuration.",
+    "insight": "The case study illustrates why bottlenecks must be evaluated in combination: extra compute only helped when feedback capacity increased too. The result concerns the modeled workload, not acceleration of the simulator itself or measured hardware execution."
+  },
+  {
+    "id": "thesis",
+    "area": "quantum",
+    "name": "A Qubit Represented by the Oscillator’s Quantum States in Magnetic Resonance Force Microscopy",
+    "subtitle": "",
+    "status": "Magnetochemistry · 2022 · Bachelor’s thesis",
+    "summary": "Undergraduate research at the intersection of quantum states and magnetic resonance force microscopy.",
+    "detail": "My bachelor’s thesis explores whether a mechanical oscillator in magnetic resonance force microscopy can represent a qubit, connecting a physical measurement platform with quantum-state control. The paper proposes using the oscillator’s lowest two quantum states under cantilever–spin resonance, and a control scheme that prepares the spin and varies its coupling interval with the oscillator. The analysis derives the associated Rabi oscillations and uses experimentally motivated parameters to estimate a feasible oscillation frequency. This is a theoretical proposal for oscillator-based qubit control, rather than an experimental demonstration. It established the physical modeling foundation of my undergraduate research and was published in Magnetochemistry in 2022.",
+    "links": [
+      [
+        "Paper",
+        "https://doi.org/10.3390/magnetochemistry8080076"
+      ]
+    ],
+    "motivation": "My bachelor’s thesis explores whether a mechanical oscillator in magnetic resonance force microscopy can represent a qubit, connecting a physical measurement platform with quantum-state control.",
+    "contribution": "The paper proposes using the oscillator’s lowest two quantum states under cantilever–spin resonance, and a control scheme that prepares the spin and varies its coupling interval with the oscillator.",
+    "findings": "The analysis derives the associated Rabi oscillations and uses experimentally motivated parameters to estimate a feasible oscillation frequency.",
+    "insight": "This is a theoretical proposal for oscillator-based qubit control, rather than an experimental demonstration. It established the physical modeling foundation of my undergraduate research and was published in Magnetochemistry in 2022."
+  }
+]
